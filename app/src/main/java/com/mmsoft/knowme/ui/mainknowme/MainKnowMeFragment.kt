@@ -36,6 +36,7 @@ class MainKnowMeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         //viewModel = ViewModelProviders.of(this).get(MainKnowMeViewModel::class.java)
         // TODO: Use the ViewModel
+        /*
         viewModel=ViewModelProviders.of(this).get(CategoryViewModel::class.java )
         viewModel.getCategoryArrayList()
         viewModel.categories.observe(viewLifecycleOwner, Observer { category ->
@@ -44,7 +45,7 @@ class MainKnowMeFragment : Fragment() {
                 it.setHasFixedSize(true)
                 it.adapter=CategoryAdapter(category)
             }
-        })
+        })*/
     }
 
 }
