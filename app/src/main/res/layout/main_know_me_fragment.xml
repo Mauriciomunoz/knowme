@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Hi! This is 'KnowMe'. Share what you love with your friends and let them know you"
+                android:text="@string/myDescription"
                 android:textAlignment="center"/>
         </androidx.cardview.widget.CardView>
 
@@ -45,19 +45,19 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Movies"/>
+                android:text="@string/movies"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Music"/>
+                android:text="@string/music"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Books"/>
+                android:text="@string/books"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hobbies"/>
+                android:text="@string/hobbies"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -66,19 +66,19 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Movies"/>
+                android:text="@string/topics"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Music"/>
+                android:text="@string/quotes"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Books"/>
+                android:text="@string/food"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hobbies"/>
+                android:text="@string/custom"/>
         </LinearLayout>
 
     </LinearLayout>
