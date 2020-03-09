@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainknowme"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.mainknowme.MainKnowMeFragment">
+>
+    <FrameLayout
+        android:id="@+id/mainknowme"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.mainknowme.MainKnowMeFragment">
 
+    <data>
+        <variable
+            name="onClickListenerMovies"
+            type="android.view.View.OnClickListener"
+            />
+    </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
 
@@ -18,7 +26,6 @@
             android:id="@+id/UserImg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
             android:src="@drawable/ic_launcher_background" />
 
         <androidx.cardview.widget.CardView
@@ -34,7 +41,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/myDescription"
-                android:textAlignment="center"/>
+                android:textAlignment="center"
+                android:onClick="@{onClickListenerMovies}"
+                />
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
@@ -43,10 +52,12 @@
             android:layout_marginTop="40dp"
             android:orientation="horizontal">
             <Button
+                android:id="@+id/btnMovies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/movies"/>
             <Button
+                android:id="@+id/btnMusic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/music"/>
@@ -82,4 +93,5 @@
         </LinearLayout>
 
     </LinearLayout>
-</FrameLayout>
+    </FrameLayout>
+</layout>
