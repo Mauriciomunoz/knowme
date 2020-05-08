@@ -3,11 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 >
-
     <data>
         <variable
-            name="onClickListenerMovies"
-            type="android.view.View.OnClickListener"
+            name="listener"
+            type="com.mmsoft.knowme.ui.mainknowme.ClickHandler"
             />
     </data>
 
@@ -51,12 +50,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
             <Button
                 android:id="@+id/btnMovies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/movies"/>
+                android:text="@string/movies"
+                android:onClick="@{view->listener.clickOnMovies(view)}"
+                />
             <Button
                 android:id="@+id/btnMusic"
                 android:layout_width="wrap_content"
