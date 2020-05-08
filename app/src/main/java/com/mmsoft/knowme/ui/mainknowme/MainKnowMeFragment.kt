@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.ListFragment
 import androidx.lifecycle.Observer
@@ -26,49 +27,28 @@ class MainKnowMeFragment : Fragment() {
     }
 
     private lateinit var viewModel: CategoryViewModel
-    private lateinit var binding:MainKnowMeFragmentBinding
+    private lateinit var binding: MainKnowMeFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
+        // Inflate view and obtain an instance of the binding class
         binding=MainKnowMeFragmentBinding.inflate(inflater,container,false)
 
-        binding.btnMovies.setOnClickListener{
+        //Attach listener class
+        binding.listener=ClickHandler();
 
-        }
-
-        return inflater.inflate(R.layout.main_know_me_fragment, container, false)
+        //Return the inflated view with the listener attached.
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        //viewModel = ViewModelProviders.of(this).get(MainKnowMeViewModel::class.java)
-        // TODO: Use the ViewModel
-        /*
-        viewModel=ViewModelProviders.of(this).get(CategoryViewModel::class.java )
-        viewModel.getCategoryArrayList()
-        viewModel.categories.observe(viewLifecycleOwner, Observer { category ->
-            category_recycler_view.also {
-                it.layoutManager=LinearLayoutManager(requireContext())
-                it.setHasFixedSize(true)
-                it.adapter=CategoryAdapter(category)
-            }
-        })*/
+}
+
+class ClickHandler{
+    fun clickOnMovies(view: View){
+        Toast.makeText(view.context, "Clicked",Toast.LENGTH_LONG).show();
     }
-
-    private fun navigateToCategory(){
-        // Create new fragment (Either map or list fragment) and the transaction
-        val listFragment = ListFragment()
-        val transaction = fragmentManager!!.beginTransaction()
-
-        // Replace whatever is in the fragment_container view with this fragment,
-        // and add the transaction to the back stack if needed
-        transaction.replace(R.id.myTopFragment, listFragment)
-        transaction.addToBackStack(null)
-
-        // Commit the transaction
-        transaction.commit()
-    }
-
 }
