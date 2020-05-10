@@ -48,7 +48,17 @@ class MainKnowMeFragment : Fragment() {
 }
 
 class ClickHandler{
-    fun clickOnMovies(view: View){
-        Toast.makeText(view.context, "Clicked",Toast.LENGTH_LONG).show();
+    fun clickOnMovies(view: View, idView:Int){
+
+        when(idView){
+            1 -> Toast.makeText(view.context, "Clicked Movies",Toast.LENGTH_LONG).show()
+            2 -> Toast.makeText(view.context, "Clicked Music",Toast.LENGTH_LONG).show()
+            3 -> Toast.makeText(view.context, "Clicked Books",Toast.LENGTH_LONG).show()
+            4 -> Toast.makeText(view.context, "Clicked Hobbies",Toast.LENGTH_LONG).show()
+            5 -> Toast.makeText(view.context, "Clicked Topics",Toast.LENGTH_LONG).show()
+            6 -> Toast.makeText(view.context, "Clicked Quotes",Toast.LENGTH_LONG).show()
+            7 -> Toast.makeText(view.context, "Clicked Food",Toast.LENGTH_LONG).show()
+            8 -> Toast.makeText(view.context, "Clicked Custom",Toast.LENGTH_LONG).show()
+        }
     }
 }

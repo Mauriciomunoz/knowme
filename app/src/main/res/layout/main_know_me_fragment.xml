@@ -57,21 +57,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/movies"
-                    android:onClick="@{view->listener.clickOnMovies(view)}"
+                    android:onClick="@{view->listener.clickOnMovies(view,1)}"
                     />
                 <Button
                     android:id="@+id/btnMusic"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/music"/>
+                    android:text="@string/music"
+                    android:onClick="@{view->listener.clickOnMovies(view,2)}"
+                    />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/books"/>
+                    android:text="@string/books"
+                    android:onClick="@{view->listener.clickOnMovies(view,3)}"
+                    />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/hobbies"/>
+                    android:text="@string/hobbies"
+                    android:onClick="@{view->listener.clickOnMovies(view,4)}"
+                    />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -80,19 +86,27 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/topics"/>
+                    android:text="@string/topics"
+                    android:onClick="@{view->listener.clickOnMovies(view,5)}"
+                    />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/quotes"/>
+                    android:text="@string/quotes"
+                    android:onClick="@{view->listener.clickOnMovies(view,6)}"
+                    />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/food"/>
+                    android:text="@string/food"
+                    android:onClick="@{view->listener.clickOnMovies(view,7)}"
+                    />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/custom"/>
+                    android:text="@string/custom"
+                    android:onClick="@{view->listener.clickOnMovies(view,8)}"
+                    />
             </LinearLayout>
 
         </LinearLayout>
