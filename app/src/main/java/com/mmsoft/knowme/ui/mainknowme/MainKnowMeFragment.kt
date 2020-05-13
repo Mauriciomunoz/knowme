@@ -1,24 +1,19 @@
 package com.mmsoft.knowme.ui.mainknowme
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.ListFragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.mmsoft.knowme.ListOfInterests
+import com.mmsoft.knowme.MainActivity
 import com.mmsoft.knowme.R
-import com.mmsoft.knowme.adapter.CategoryAdapter
-import com.mmsoft.knowme.databinding.CategoryItemBinding
 import com.mmsoft.knowme.databinding.MainKnowMeFragmentBinding
 import com.mmsoft.knowme.viewmodel.CategoryViewModel
-import kotlinx.android.synthetic.main.main_know_me_fragment.*
+
 
 class MainKnowMeFragment : Fragment() {
 
@@ -39,19 +34,33 @@ class MainKnowMeFragment : Fragment() {
         binding=MainKnowMeFragmentBinding.inflate(inflater,container,false)
 
         //Attach listener class
-        binding.listener=ClickHandler();
+        binding.clicked=this
+
 
         //Return the inflated view with the listener attached.
         return binding.root
     }
 
-}
+    fun clicked(view: View, idView:Int){
 
-class ClickHandler{
-    fun clickOnMovies(view: View, idView:Int){
-
+        var fm:FragmentManager
         when(idView){
-            1 -> Toast.makeText(view.context, "Clicked Movies",Toast.LENGTH_LONG).show()
+            1 -> {
+                val detailsFragment: ListOfInterests =
+                    ListOfInterests.newInstance()
+
+                val fg: FragmentManager? =fragmentManager
+                if (fg != null) {
+                    fg.beginTransaction()
+                    .replace(R.id.fragment_container, detailsFragment)
+                    .addToBackStack(null)
+                    .commit()
+                }
+
+
+            }
+
+
             2 -> Toast.makeText(view.context, "Clicked Music",Toast.LENGTH_LONG).show()
             3 -> Toast.makeText(view.context, "Clicked Books",Toast.LENGTH_LONG).show()
             4 -> Toast.makeText(view.context, "Clicked Hobbies",Toast.LENGTH_LONG).show()
@@ -60,5 +69,8 @@ class ClickHandler{
             7 -> Toast.makeText(view.context, "Clicked Food",Toast.LENGTH_LONG).show()
             8 -> Toast.makeText(view.context, "Clicked Custom",Toast.LENGTH_LONG).show()
         }
+
+
     }
+
 }
